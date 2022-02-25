@@ -1,0 +1,15 @@
+<div class="title-container flex">
+  <h1>Public Recipes</h1>
+</div>
+
+<% unless @recipes.empty?%>
+
+    <% @recipes.each do |recipe| %>
+        <li class="public-recipe-container">
+            <h4><%= recipe.name%></h4><p>By <%= User.find(recipe.user_id).name %></p>
+        </li>
+    <% end %>
+    </ul>
+<% else %>
+  <p>No foods available</p>
+<% end %>
