@@ -1,0 +1,19 @@
+<nav class="flex">
+  <div class="menu-container">
+  <h3> Recipes App </h3>
+  <ul>
+    <li><%= link_to "Foods", foods_path %></li>
+    <li class="nav-b-2"><%= link_to "Recipes", recipes_path %></li>
+    <li class="nav-b-2"><%= link_to "Public Recipes", public_recipes_path %></li>
+    <li class="nav-b-2"><%= link_to "Shopping List", recipes_path %></li>
+  </ul>
+  </div>
+  <div class="user-data">
+  <% if user_signed_in? %>
+    <%= current_user.name %>
+    <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <span>Guest</span>
+  <% end %>
+  </div>
+</nav>
