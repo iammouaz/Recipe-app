@@ -6,11 +6,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbolinks-track": "reload" %>
+    <%= stylesheet_link_tag "public_recipes", "data-turbolinks-track": "reload" %>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <%= javascript_importmap_tags %>
   </head>
-
+  <header>
+    <%= render "shared/nav" %>
+  </header>
   <body>
+    <div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
     <%= yield %>
   </body>
 </html>
